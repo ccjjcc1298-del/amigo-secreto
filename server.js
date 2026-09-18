@@ -10,13 +10,15 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "public")));
+
+// Servir los archivos directamente desde la raíz del proyecto
+app.use(express.static(__dirname));
 
 app.use("/api", apiRouter);
 
-// SPA fallback: cualquier ruta que no sea /api sirve el index.html
+// Servir index.html para cualquier otra ruta
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
 app.listen(PORT, () => {
