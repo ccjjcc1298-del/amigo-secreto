@@ -3,16 +3,16 @@ import {
   createRoom,
   getRoomByCode,
   checkAndExpireRoom,
-} from "../services/roomService.js";
+} from "./roomService.js";
 import {
   getParticipantsByRoom,
   getParticipantCount,
   findParticipantByName,
   addParticipant,
-} from "../services/participantService.js";
-import { performDraw, hasDrawBeenCompleted, getReceiverName } from "../services/drawService.js";
-import { verifyCode } from "../utils/crypto.js";
-import supabase from "../db.js";
+} from "./participantService.js";
+import { performDraw, hasDrawBeenCompleted, getReceiverName } from "./drawService.js";
+import { verifyCode } from "./crypto.js";
+import supabase from "./db.js";
 
 const router = Router();
 
