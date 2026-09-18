@@ -1,4 +1,4 @@
-import supabase from "../db.js";
+import supabase from "./db.js";
 
 export async function hasDrawBeenCompleted(roomId) {
   const { count, error } = await supabase
