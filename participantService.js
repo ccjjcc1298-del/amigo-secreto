@@ -1,5 +1,5 @@
-import supabase from "../db.js";
-import { hashCode } from "../utils/crypto.js";
+import supabase from "./db.js";
+import { hashCode } from "./crypto.js";
 
 export async function getParticipantsByRoom(roomId) {
   const { data, error } = await supabase
