@@ -18,7 +18,7 @@ export async function createRoom() {
     .from("rooms")
     .insert({
       room_code: code,
-      closes_at: new Date(Date.now() + 6 * 60 * 60 * 1000).toISOString(),
+      closes_at: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
       status: "registration_open",
     })
     .select("id, room_code, created_at, closes_at, status")
